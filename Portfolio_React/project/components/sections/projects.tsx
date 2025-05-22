@@ -17,12 +17,14 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLinkIcon, GithubIcon, XIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import type { Project } from "@/lib/data";
 
 type FilterOption = "all" | "frontend" | "backend" | "fullstack" | "AI";
 
 export function Projects() {
   const [filter, setFilter] = useState<FilterOption>("all");
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
