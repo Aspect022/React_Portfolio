@@ -7,9 +7,16 @@ import { CalendarIcon, Briefcase } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
+import type { ExperienceItem } from "@/lib/data";
+
+type TimelineItemProps = {
+  experience: ExperienceItem;
+  index: number;
+  isInView: boolean;
+};
 
 export function Timeline() {
-  const ref = useRef(null);
+const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
@@ -48,7 +55,7 @@ export function Timeline() {
   );
 }
 
-function TimelineItem({ experience, index, isInView }) {
+function TimelineItem({ experience, index, isInView }: TimelineItemProps) {
   const isEven = index % 2 === 0;
   
   return (

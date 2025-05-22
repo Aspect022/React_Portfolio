@@ -157,8 +157,13 @@ export function Projects() {
     </div>
   );
 }
+type ProjectCardProps = {
+  project: Project;
+  onClick: () => void;
+};
 
-function ProjectCard({ project, onClick }) {
+
+function ProjectCard({ project, onClick }: ProjectCardProps) {
   return (
     <Card className="overflow-hidden transition-all hover:shadow-md">
       <div className="relative aspect-video overflow-hidden">
