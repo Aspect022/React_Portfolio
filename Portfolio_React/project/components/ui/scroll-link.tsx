@@ -3,6 +3,8 @@
 import { forwardRef } from "react";
 import Link, { LinkProps } from "next/link";
 import { cn } from "@/lib/utils";
+import { formatUrl } from 'next/dist/shared/lib/router/utils/format-url'
+
 
 interface ScrollLinkProps extends LinkProps {
   children: React.ReactNode;
@@ -13,28 +15,29 @@ interface ScrollLinkProps extends LinkProps {
 export const ScrollLink = forwardRef<HTMLAnchorElement, ScrollLinkProps>(
   ({ children, href, className, onClick, ...props }, ref) => {
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault();
-      
-      // Execute optional onClick callback
-      if (onClick) {
-        onClick();
-      }
-      
-      // Extract the id from the href
-      const targetId = href.toString().replace(/.*\#/, "");
-      const targetElement = document.getElementById(targetId);
-      
-      if (targetElement) {
-        // Scroll to the element
-        window.scrollTo({
-          top: targetElement.offsetTop - 80, // Adjust for header height
-          behavior: "smooth",
-        });
-        
-        // Update URL hash without scrolling (history API)
-        window.history.pushState(null, "", href);
-      }
-    };
+  e.preventDefault();
+
+  if (onClick) {
+    onClick();
+  }
+
+  const targetId = href.toString().replace(/.*#/, "");
+  const targetElement = document.getElementById(targetId);
+
+  if (targetElement) {
+    window.scrollTo({
+      top: targetElement.offsetTop - 80,
+      behavior: "smooth",
+    });
+
+    window.history.pushState(
+      null,
+      "",
+      typeof href === "string" ? href : href.pathname
+    );
+  }
+};
+
 
     return (
       <Link
