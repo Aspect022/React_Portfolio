@@ -7,6 +7,8 @@ import { Timeline } from '@/components/sections/timeline';
 import { Contact } from '@/components/sections/contact';
 import { ScrollProgress } from '@/components/layout/scroll-progress';
 
+
+
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col">
