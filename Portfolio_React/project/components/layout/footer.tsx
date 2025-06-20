@@ -37,7 +37,7 @@ export function Footer() {
             <h4 className="font-semibold">Connect</h4>
             <div className="mt-2 flex space-x-4">
               <Link
-                href="https://github.com"
+                href="https://github.com/Aspect022"
                 target="_blank"
                 rel="noreferrer"
                 className="text-muted-foreground hover:text-foreground"
@@ -46,7 +46,7 @@ export function Footer() {
                 <GithubIcon size={20} />
               </Link>
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/jayesh-rl-748059291/"
                 target="_blank"
                 rel="noreferrer"
                 className="text-muted-foreground hover:text-foreground"
@@ -55,7 +55,7 @@ export function Footer() {
                 <LinkedinIcon size={20} />
               </Link>
               <Link
-                href="https://twitter.com"
+                href="https://x.com/Jayesh25279350"
                 target="_blank"
                 rel="noreferrer"
                 className="text-muted-foreground hover:text-foreground"
