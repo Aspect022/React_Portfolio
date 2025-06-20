@@ -4,8 +4,10 @@ import { Hero } from "@/components/sections/hero"
 import { About } from "@/components/sections/about"
 import { Projects } from "@/components/sections/projects"
 import { Timeline } from "@/components/sections/timeline"
+import { Achievements } from "@/components/sections/achievements"
 import { Contact } from "@/components/sections/contact"
 import { ScrollProgress } from "@/components/layout/scroll-progress"
+import { EasterEgg } from "@/components/ui/easter-egg"
 
 export default function Home() {
   return (
@@ -21,13 +23,17 @@ export default function Home() {
       <section id="projects" className="bg-muted/50 py-20">
         <Projects />
       </section>
-      <section id="experience" className="py-20">
+      <section id="achievements" className="py-20">
+        <Achievements />
+      </section>
+      <section id="experience" className="bg-muted/50 py-20">
         <Timeline />
       </section>
-      <section id="contact" className="bg-muted/50 py-20">
+      <section id="contact" className="py-20">
         <Contact />
       </section>
       <Footer />
+      <EasterEgg />
     </main>
   )
 }

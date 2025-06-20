@@ -171,11 +171,26 @@ export function Contact() {
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Get In Touch</h2>
-          <p className="mt-4 text-muted-foreground">
+        {/* Standardized Header with White Text */}
+        <div className="mx-auto max-w-4xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative"
+          >
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">Get In Touch</h2>
+            {/* Aurora glow effect */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-600/20 via-blue-600/20 to-purple-600/20 blur-2xl opacity-30 -z-10" />
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+          >
             Have a project in mind or want to discuss a potential collaboration? I'd love to hear from you!
-          </p>
+          </motion.p>
         </div>
 
         <div className="mt-16 grid gap-10 md:grid-cols-5">
