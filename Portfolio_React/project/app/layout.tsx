@@ -37,7 +37,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://jayeshrl.dev",
     title: "Jayesh RL | Full-Stack Developer & AI Engineer",
-    description: "Passionate Full-Stack Developer and AI Engineer building intelligent, impactful software solutions.",
+    description:
+      "Passionate Full-Stack Developer and AI Engineer building intelligent, impactful software solutions.",
     siteName: "Jayesh RL Portfolio",
     images: [
       {
@@ -51,7 +52,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Jayesh RL | Full-Stack Developer & AI Engineer",
-    description: "Passionate Full-Stack Developer and AI Engineer building intelligent, impactful software solutions.",
+    description:
+      "Passionate Full-Stack Developer and AI Engineer building intelligent, impactful software solutions.",
     images: ["/og-image.jpg"],
     creator: "@Jayesh25279350",
   },
@@ -69,7 +71,11 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-verification-code",
   },
-}
+  icons: {
+    icon: "/favicon.png",
+  },
+};
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
